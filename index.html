@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Mixer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <section class="input-slider-container">
+            <input type="range" 
+                   name="red-value" 
+                   id="red-value" 
+                   min="0" 
+                   max="255" 
+                   value="255">
+            <input type="range" 
+                   name="green-value" 
+                   id="green-value" 
+                   min="0" 
+                   max="255" 
+                   value="209">
+            <input type="range" 
+                   name="blue-value" 
+                   id="blue-value" 
+                   min="0" max="255" 
+                   value="24">
+        </section>
+
+        <section class="color-code-container">
+            <h1 class="color-code-hex">#ffd118</h1>
+            <img src="assets/images/copy.png" 
+                 alt="copy icon" 
+                 id="copy-btn">
+            <p class="copy-to-clipboard-popup">
+                Copy to Clipboard</p>
+            <p class="copied-popup">
+                Copied!</p>
+        </section>
+    </header>
+
+    <main></main>
+
+    <footer></footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
