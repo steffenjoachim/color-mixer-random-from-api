@@ -1,6 +1,6 @@
 # Color Picker Application
 
-This project is a continuation of my original [Color Mixer project](https://github.com/steffenjoachim/color-mixer), which is a simple web-based **Color Picker** tool. It allows users to adjust RGB (Red, Green, Blue) values using sliders and see the resulting color in real time. Additionally, users can copy the generated hexadecimal color code to the clipboard and even generate a random color using a new "Random Color" button. 
+This project is a simple web-based **Color Picker** tool. It allows users to adjust RGB (Red, Green, Blue) values using sliders and see the resulting color in real time. Additionally, users can copy the generated hexadecimal color code to the clipboard and even generate a random color using a new "Random Color" button. 
 
 ## Features
 

@@ -44,7 +44,7 @@ function changeBackgroundColor() {
   const green = parseInt(greenSlider.value);
   const blue = parseInt(blueSlider.value);
   const main = document.querySelector("main");
-const footer = document.querySelector("footer");
+  const footer = document.querySelector("footer");
 
   const hexColor = rgbToHex(red, green, blue);
 
