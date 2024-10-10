@@ -5,37 +5,57 @@ const colorCodeHex = document.querySelector(".color-code-hex");
 const copyButton = document.getElementById("copy-btn");
 const copyPopup = document.querySelector(".copy-to-clipboard-popup");
 const copiedPopup = document.querySelector(".copied-popup");
-const main = document.querySelector("main");
-const footer = document.querySelector("footer");
+
+const btn = document.querySelector("button");
 
 // Event listener for slider changes
 redSlider.addEventListener("input", changeBackgroundColor);
 greenSlider.addEventListener("input", changeBackgroundColor);
 blueSlider.addEventListener("input", changeBackgroundColor);
 
+// Event listener for dthe random color btn
+btn.addEventListener("click", getRandomColor);
+
 // Event listener for the copy button
 copyButton.addEventListener("click", handleCopy);
 copyButton.addEventListener("mouseover", showCopyPopup);
 copyButton.addEventListener("mouseleave", hideCopyPopup);
 
-// Function to change the background color of the main section and footer
+//Function to get a random color from the API
+async function getRandomColor() {
+  let response = await fetch("https://dummy-apis.netlify.app/api/color");
+  let responsJson = await response.json();
+  let color = await responsJson.color;
+  setSliderValues(color);
+}
+
+function setSliderValues(color){
+  let hex = color.replace('#', '');
+
+  redSlider.value = parseInt(hex.substring(0, 2), 16);
+  greenSlider.value = parseInt(hex.substring(2, 4), 16);
+  blueSlider.value = parseInt(hex.substring(4, 6), 16);
+  changeBackgroundColor()
+}
+
+// Function to change the background color of the main section and header and footer
 function changeBackgroundColor() {
   const red = parseInt(redSlider.value);
   const green = parseInt(greenSlider.value);
   const blue = parseInt(blueSlider.value);
+  const main = document.querySelector("main");
+const footer = document.querySelector("footer");
 
   const hexColor = rgbToHex(red, green, blue);
 
-  // Update the background color of the main section
   main.style.backgroundColor = hexColor;
 
-  // Update the H1 text with the new color code
   colorCodeHex.textContent = hexColor;
 
-  // Dynamic linear gradient for the footer
   footer.style.background = `linear-gradient(to top, var(--clr-black), ${hexColor})`;
-  
-  // Update the slider colors
+
+  document.querySelector("header").style.backgroundColor = hexColor;
+
   updateSliderColors();
 }
 
