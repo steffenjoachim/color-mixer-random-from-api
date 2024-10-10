@@ -23,10 +23,14 @@ copyButton.addEventListener("mouseleave", hideCopyPopup);
 
 //Function to get a random color from the API
 async function getRandomColor() {
-  let response = await fetch("https://dummy-apis.netlify.app/api/color");
-  let responsJson = await response.json();
-  let color = await responsJson.color;
-  setSliderValues(color);
+  try {
+    let response = await fetch("https://dummy-apis.netlify.app/api/color");
+    let responsJson = await response.json();
+    let color = await responsJson.color;
+    setSliderValues(color);
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 function setSliderValues(color){

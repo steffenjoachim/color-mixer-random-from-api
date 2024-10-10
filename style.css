@@ -92,6 +92,11 @@ button {
     padding: .125rem 0.375rem;
     font-weight: bold;
     font-size: 2rem;
+    cursor: pointer;
+}
+
+button:hover {
+  opacity: .5;
 }
 
 main {
