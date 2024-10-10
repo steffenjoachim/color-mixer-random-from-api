@@ -38,21 +38,18 @@ function setSliderValues(color){
   changeBackgroundColor()
 }
 
-// Function to change the background color of the main section and header and footer
+// Function to change the background color of the main section and header 
 function changeBackgroundColor() {
   const red = parseInt(redSlider.value);
   const green = parseInt(greenSlider.value);
   const blue = parseInt(blueSlider.value);
   const main = document.querySelector("main");
-  const footer = document.querySelector("footer");
-
+  
   const hexColor = rgbToHex(red, green, blue);
 
   main.style.backgroundColor = hexColor;
 
   colorCodeHex.textContent = hexColor;
-
-  footer.style.background = `linear-gradient(to top, var(--clr-black), ${hexColor})`;
 
   document.querySelector("header").style.backgroundColor = hexColor;
 

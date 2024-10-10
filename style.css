@@ -209,12 +209,3 @@ input[type="range"]#blue-value::-moz-range-thumb {
   background: var(--clr-blue);
   cursor: pointer;
 }
-
-footer {
-  height: 10vh;
-  background: linear-gradient(
-    to top,
-    var(--clr-black),
-    var(--clr-default-orange)
-  );
-}
